@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1/Assignment1.csproj": {}
+    "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1.csproj": {}
   },
   "projects": {
-    "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1/Assignment1.csproj": {
+    "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1/Assignment1.csproj",
+        "projectUniqueName": "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1.csproj",
         "projectName": "Assignment1",
-        "projectPath": "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1/Assignment1.csproj",
+        "projectPath": "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1.csproj",
         "packagesPath": "/Users/yangjinting/.nuget/packages/",
-        "outputPath": "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/Assignment1/obj/",
+        "outputPath": "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Assignment1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/yangjinting/.config/NuGet/NuGet.Config"
