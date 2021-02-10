@@ -32,7 +32,6 @@ namespace Assignment1
             Console.WriteLine("Done");
         }
 
-
         public void Parse(String fileName)
         {
             if(fileName is null)
@@ -97,7 +96,15 @@ namespace Assignment1
                                             ls_item += fields[i].ToString() + ",";
                                         }
                                     }
-                                    sw.Write(ls_item);
+                                    string[] trans = ls_item.Split(",");
+                                    if(trans.Length>10)
+                                    {
+                                        GLobal.all_skip++;
+                                    }
+                                    else
+                                    {
+                                        sw.Write(ls_item);
+                                    }
                                     ls_item = "";
                                 }
                             }
@@ -146,7 +153,6 @@ namespace Assignment1
 
 
         }
-
 
         //some global variables and function
         public static class GLobal
