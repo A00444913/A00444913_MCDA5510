@@ -15,10 +15,8 @@ namespace Assignment1
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
             Program data_clean = new Program();
-            //string path = @"/Users/yangjinting/Desktop/Sample Data";
-            string result = Environment.CurrentDirectory;
-            Console.Write(result);
-            /*data_clean.Walk(path);
+            string path = @"/Users/yangjinting/Desktop/Sample Data";
+            data_clean.Walk(path);
             foreach(string file in GLobal.file_list_final)
             {
                 data_clean.Parse(file);
@@ -29,7 +27,7 @@ namespace Assignment1
             //write logs
             GLobal.WriteLogs("All skipped number is " + GLobal.all_skip);
             GLobal.WriteLogs("All valid number is " + GLobal.all_valid);
-            GLobal.WriteLogs("Execution time is " + ts2.TotalMilliseconds + "ms");*/
+            GLobal.WriteLogs("Execution time is " + ts2.TotalMilliseconds + "ms");
 
             Console.WriteLine("Done");
         }
