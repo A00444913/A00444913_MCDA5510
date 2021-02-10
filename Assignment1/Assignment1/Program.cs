@@ -11,11 +11,14 @@ namespace Assignment1
 
         public static void Main(String[] args)
         {
+            Console.WriteLine("Program start...");
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
             Program data_clean = new Program();
-            string path = @"/Users/yangjinting/Desktop/Sample Data";
-            data_clean.Walk(path);
+            //string path = @"/Users/yangjinting/Desktop/Sample Data";
+            string result = Environment.CurrentDirectory;
+            Console.Write(result);
+            /*data_clean.Walk(path);
             foreach(string file in GLobal.file_list_final)
             {
                 data_clean.Parse(file);
@@ -26,7 +29,7 @@ namespace Assignment1
             //write logs
             GLobal.WriteLogs("All skipped number is " + GLobal.all_skip);
             GLobal.WriteLogs("All valid number is " + GLobal.all_valid);
-            GLobal.WriteLogs("Execution time is " + ts2.TotalMilliseconds + "ms");
+            GLobal.WriteLogs("Execution time is " + ts2.TotalMilliseconds + "ms");*/
 
             Console.WriteLine("Done");
         }
@@ -40,7 +43,7 @@ namespace Assignment1
                 return;
             }
             string column = "First Name,Last Name,Street Number,Street,City,Province,Postal code,Country,Phone Number,email Address\r\n";
-            string FilePath = "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Output/final.csv";
+            string FilePath = "/Users/yangjinting/Desktop/git/A00444913_MCDA5510/Assignment1/Output/result.csv";
             FileStream fs;
             StreamWriter sw;
             if (!File.Exists(FilePath))
@@ -54,28 +57,26 @@ namespace Assignment1
                 fs = new FileStream(FilePath, FileMode.Append, FileAccess.Write);
                 sw = new StreamWriter(fs);
             }
-            int skipped_row = 0;
-            int valid_row = 0;
             try
             {
                 using (TextFieldParser parser = new TextFieldParser(fileName))
                 {
-                    parser.TextFieldType = FieldType.Delimited; //定义文本分隔符
-                    parser.SetDelimiters(",");  //将文本分隔符定义为“，”
-                    while (!parser.EndOfData)  //当前光标位置和文件末尾之间没有 非空白 非注释的行
+                    parser.TextFieldType = FieldType.Delimited; 
+                    parser.SetDelimiters(",");  
+                    while (!parser.EndOfData) 
                     {
                         //Process row
                         string[] fields = parser.ReadFields();
                         int l = fields.Length;
                         if(l!=10)
                         {
-                            skipped_row = skipped_row + 1;
+                            GLobal.all_skip++;
                         }
                         else
                         {
                             if (fields[0] == "" || fields[1] == "" || fields[2] == "" || fields[3] == "" || fields[4] == "" || fields[5] == "" || fields[6] == "" || fields[7] == "" || fields[8] == "" || fields[9] == "")
                             {
-                                skipped_row = skipped_row + 1;
+                                GLobal.all_skip++;
                             }
                             else
                             {
@@ -85,7 +86,7 @@ namespace Assignment1
                                 }
                                 else
                                 {
-                                    valid_row = valid_row + 1;
+                                    GLobal.all_valid++;
                                     string ls_item = "";
                                     for (int i = 0; i < l; i++)
                                     {
@@ -106,8 +107,6 @@ namespace Assignment1
                     }
                     sw.Close();
                     fs.Close();
-                    GLobal.all_skip = GLobal.all_skip + skipped_row;
-                    GLobal.all_valid = GLobal.all_valid + valid_row;
                 }
 
             }
