@@ -1,0 +1,33 @@
+
+.red{
+  color:red;
+}
+
+.menu {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: 1fr 1fr 2fr;
+  font-size: large;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.menu-item:hover {
+ color: #2947B6;
+ text-decoration: underline;
+ cursor: pointer;
+}
+
+.me img{
+  width:300px;
+
+}
+
+.home img{
+  width:300px;
+}
+
+.temp img{
+  width:300px;
+}
+
